@@ -5,13 +5,8 @@ import { Heart, Target, Lightbulb, Users, BookOpen, Award, ArrowRight, Leaf, Bot
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 
-const team = [
-  { name: "Ustaz Ahmad Fauzi", role: "Kepala Kurikulum", avatar: "AF", desc: "15 tahun pengalaman mengajar bahasa Arab dan lulus dari Universitas Al-Azhar Kairo.", color: "from-sky-500 to-blue-600" },
-  { name: "Dr. Rizki Teknologi", role: "CTO & AI Engineer", avatar: "RT", desc: "Ahli AI & Machine Learning dengan spesialisasi NLP untuk bahasa Arab dan Indonesia.", color: "from-violet-500 to-purple-600" },
-  { name: "Siti Nurhaliza, M.Pd", role: "Direktur Konten", avatar: "SN", desc: "Peneliti linguistik Arab dengan 10+ tahun pengalaman merancang materi pembelajaran.", color: "from-rose-500 to-pink-600" },
-  { name: "Farid Wajedi", role: "Lead Developer", avatar: "FW", desc: "Full-stack developer yang berdedikasi menciptakan pengalaman belajar yang luar biasa.", color: "from-blue-500 to-cyan-600" },
-];
 
 const values = [
   { icon: Heart, title: "Belajar dengan Hati", desc: "Kami percaya belajar bahasa Arab adalah ibadah. Setiap fitur dirancang dengan cinta untuk memudahkan perjalananmu.", color: "text-rose-500 bg-rose-50 dark:bg-rose-950/30" },
@@ -32,10 +27,11 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-hero">
       {/* Hero */}
       <section className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
+        <ThreeBgDynamic className="opacity-50" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-sky-500/5 blur-3xl" />
         </div>
-        <div className="max-w-4xl mx-auto text-center relative">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/50 px-4 py-1.5 text-sm text-sky-700 dark:text-sky-300 mb-6">
               <Moon className="h-3.5 w-3.5" /> Tentang Kami
@@ -62,30 +58,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "50K+", label: "Pelajar Aktif" },
-              { value: "500+", label: "Konten Materi" },
-              { value: "4.9/5", label: "Rating Pengguna" },
-              { value: "3+", label: "Tahun Berpengalaman" },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <p className="text-4xl font-black text-sky-600 dark:text-sky-400 gradient-text">{stat.value}</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Mission & Values */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -160,42 +132,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">
-              Tim <span className="gradient-text">Kami</span>
-            </h2>
-            <p className="mt-3 text-slate-600 dark:text-slate-300">Gabungan pakar bahasa Arab, teknologi, dan pendidikan.</p>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 text-center card-hover"
-              >
-                <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${member.color} flex items-center justify-center text-white text-2xl font-black mx-auto mb-4 shadow-lg`}>
-                  {member.avatar}
-                </div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-sm">{member.name}</h3>
-                <p className="text-xs text-sky-600 dark:text-sky-400 font-medium mt-0.5 mb-3">{member.role}</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{member.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
@@ -203,7 +139,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl bg-gradient-to-br from-sky-500 to-blue-600 p-12 text-white shadow-2xl shadow-sky-500/20"
+            className="rounded-3xl bg-linear-to-br from-sky-500 to-blue-600 p-12 text-white shadow-2xl shadow-sky-500/20"
           >
             <h2 className="text-2xl font-extrabold mb-3">Siap Bergabung Bersama Kami?</h2>
             <p className="text-sky-100 mb-8">Mulai perjalanan belajar bahasa Arab yang menyenangkan bersama 50.000+ pelajar Indonesia.</p>

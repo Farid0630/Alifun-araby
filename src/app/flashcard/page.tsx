@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 
 type CardState = "idle" | "flipped";
 
@@ -108,9 +109,10 @@ export default function FlashcardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero relative">
+      <ThreeBgDynamic className="opacity-40" />
       {/* Header */}
-      <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-700/40">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-700/40">
         <div className="max-w-3xl mx-auto px-4 py-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center gap-2 text-sm text-sky-600 dark:text-sky-400 mb-2">
@@ -124,7 +126,7 @@ export default function FlashcardPage() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 py-6 space-y-6">
         {/* Category Filter */}
         <div className="flex gap-2 flex-wrap">
           {flashcardCategories.map((cat) => (

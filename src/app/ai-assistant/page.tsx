@@ -97,6 +97,7 @@ export default function AIAssistantPage() {
 
       const data = await res.json();
 
+      // Tangani error dari server
       if (!res.ok || data.error) {
         throw new Error(data.error ?? "Terjadi kesalahan.");
       }
@@ -115,14 +116,15 @@ export default function AIAssistantPage() {
       typewriterEffect(aiId, data.text);
 
     } catch (err) {
-      const errMsg: Message = {
-        id: `e-${Date.now()}`,
+      // Fallback — tampilkan respons dasar, bukan error merah
+      const aiId = `a-fallback-${Date.now()}`;
+      const fallback: Message = {
+        id: aiId,
         role: "assistant",
-        content: err instanceof Error ? err.message : "Terjadi kesalahan. Periksa koneksi dan API key kamu.",
+        content: "Maaf, terjadi gangguan koneksi. Silakan coba lagi atau refresh halaman.",
         timestamp: new Date(),
-        isError: true,
       };
-      setMessages((prev) => [...prev, errMsg]);
+      setMessages((prev) => [...prev, fallback]);
       setIsLoading(false);
     }
   }, [isLoading, messages, typewriterEffect]);

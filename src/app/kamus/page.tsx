@@ -7,6 +7,7 @@ import { kamusData, type KamusEntry } from "@/data/kamus";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 
 const typeColors: Record<string, string> = {
   "kata benda": "default",
@@ -81,9 +82,10 @@ export default function KamusPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero relative">
+      <ThreeBgDynamic className="opacity-40" />
       {/* Header */}
-      <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-700/40">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-700/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center gap-2 text-sm text-sky-600 dark:text-sky-400 mb-2">
@@ -100,7 +102,7 @@ export default function KamusPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Panel — Search & Results */}
           <div className="lg:w-96 space-y-4">

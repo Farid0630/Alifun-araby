@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { quizSets } from "@/data/quiz";
 import { Progress } from "@/components/ui/progress";
+import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -253,7 +254,8 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero relative">
+      <ThreeBgDynamic className="opacity-35" />
       <Confetti active={showConfetti} />
 
       {/* Quiz Header */}
