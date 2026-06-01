@@ -13,7 +13,7 @@ const footerLinks = {
     { href: "/about",        label: "Tentang Kami"        },
   ],
   sosial: [
-    { href: "#", label: "Instagram", icon: MessageCircle },
+    { href: "https://www.instagram.com/alifun.araby25?igsh=MWtpcjQzY2cyY25waQ==", label: "Instagram", icon: MessageCircle },
     { href: "#", label: "YouTube",   icon: PlayCircle    },
     { href: "#", label: "Twitter",   icon: AtSign        },
     { href: "#", label: "Email",     icon: Mail          },
