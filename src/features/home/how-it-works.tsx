@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserPlus, BookOpen, Brain, Trophy, ImageIcon } from "lucide-react";
+import Image from "next/image";
+import { UserPlus, BookOpen, Brain, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -66,18 +67,13 @@ export function HowItWorks() {
              * │  atau infografis cara kerja      │
              * └─────────────────────────────────┘
              */}
-            <div className="aspect-[4/3] w-full rounded-3xl img-placeholder bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-600 flex flex-col items-center justify-center gap-4 shadow-lg">
-              <div className="h-16 w-16 rounded-2xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                <ImageIcon className="h-8 w-8 text-slate-400" />
-              </div>
-              <div className="text-center">
-                <p className="text-sm font-bold text-slate-600 dark:text-slate-300">Gambar Cara Kerja / Infografis</p>
-                <p className="text-xs text-slate-400 mt-1">Suasana belajar atau diagram alur platform</p>
-                <span className="mt-2 inline-block rounded-md bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-3 py-1 text-xs font-mono text-slate-500">
-                  800 × 600 px · Rasio 4:3
-                </span>
-              </div>
-            </div>
+            <Image
+              src="/images/how-it-works.png"
+              alt="Cara kerja platform belajar bahasa Arab"
+              width={800}
+              height={600}
+              className="w-full h-auto rounded-3xl shadow-lg object-cover"
+            />
 
             {/* Decorative floating badge */}
             <motion.div

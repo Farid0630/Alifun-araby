@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { CheckCircle2, ImageIcon, Brain, PlayCircle, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, Brain, PlayCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 
@@ -94,18 +95,14 @@ export function Hero() {
                * Ukuran: 800 × 600 px  |  Rasio: 4:3
                * Konten: Foto belajar / screenshot platform
                */}
-              <div className="aspect-4/3 w-full img-placeholder bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-sky-200 dark:border-sky-800 flex flex-col items-center justify-center gap-4">
-                <div className="h-16 w-16 rounded-2xl bg-sky-100 dark:bg-sky-900/50 flex items-center justify-center">
-                  <ImageIcon className="h-8 w-8 text-sky-400" />
-                </div>
-                <div className="text-center px-4">
-                  <p className="text-sm font-bold text-slate-600 dark:text-slate-300">Foto Utama Hero</p>
-                  <p className="text-xs text-slate-400 mt-1">Foto kegiatan belajar / screenshot platform</p>
-                  <span className="mt-2 inline-block rounded-md bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800 px-3 py-1 text-xs font-mono text-sky-600 dark:text-sky-400">
-                    800 × 600 px · Rasio 4:3
-                  </span>
-                </div>
-              </div>
+              <Image
+                src="/images/hero-main.png"
+                alt="Foto kegiatan belajar bahasa Arab"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-black/10 to-transparent pointer-events-none" />
             </div>
 
@@ -119,10 +116,13 @@ export function Hero() {
                * FOTO KECIL KANAN ATAS
                * Ukuran: 200 × 200 px  |  Rasio: 1:1
                */}
-              <div className="w-full h-full img-placeholder bg-violet-100 dark:bg-violet-900/40 border-2 border-dashed border-violet-300 dark:border-violet-700 flex flex-col items-center justify-center gap-1">
-                <ImageIcon className="h-5 w-5 text-violet-400" />
-                <span className="text-[9px] font-mono text-violet-500 text-center">200×200px<br/>1:1</span>
-              </div>
+              <Image
+                src="/images/hero-small-top.png"
+                alt="Foto belajar bahasa Arab"
+                width={200}
+                height={200}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
 
             {/* Small image — bottom left 16:9 */}
@@ -135,10 +135,13 @@ export function Hero() {
                * FOTO KECIL KIRI BAWAH
                * Ukuran: 320 × 180 px  |  Rasio: 16:9
                */}
-              <div className="aspect-video w-full img-placeholder bg-amber-50 dark:bg-amber-900/30 border-2 border-dashed border-amber-300 dark:border-amber-700 flex flex-col items-center justify-center gap-1">
-                <ImageIcon className="h-5 w-5 text-amber-400" />
-                <span className="text-[9px] font-mono text-amber-500 text-center">320×180px<br/>16:9</span>
-              </div>
+              <Image
+                src="/images/hero-small-bottom.png"
+                alt="Foto komunitas belajar bahasa Arab"
+                width={320}
+                height={180}
+                className="w-full h-auto object-cover"
+              />
             </motion.div>
 
 
