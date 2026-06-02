@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { ThreeBgDynamic } from "@/components/ui/three-bg-dynamic";
 
 const highlights = [
-  "Materi dari Huruf Hijaiyah hingga Nahwu",
-  "AI Assistant aktif 24 jam",
-  "Quiz & Flashcard Interaktif",
+  "Program Studi Pendidikan Bahasa Arab",
+  "Universitas Islam Negeri Mataram",
+  "Bahasa Arab",
 ];
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0 } };
@@ -44,7 +44,7 @@ export function Hero() {
 
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
               Belajar <span className="gradient-text">Bahasa Arab</span>
-              <br />Lebih Mudah &amp; Modern
+              <br />Lebih Mudah & Modern
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-sky-600/70 dark:text-sky-400/60 font-medium" style={{ fontFamily: "var(--font-cairo)" }}>
@@ -52,7 +52,7 @@ export function Hero() {
             </motion.p>
 
             <motion.p variants={fadeUp} className="text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
-              Platform digital pembelajaran Bahasa Arab yang memadukan AI Assistant, kamus pintar, quiz interaktif, dan materi terstruktur — untuk siapa saja yang ingin belajar bahasa Arab.
+              Selamat datang di website resmi Kelas A Pascasarjana Pendidikan Bahasa Arab UIN Mataram. Wadah digital untuk berbagi ilmu, materi, dan informasi akademik bagi seluruh mahasiswa kelas A dalam menempuh studi yang penuh berkah dan manfaat.
             </motion.p>
 
             <motion.ul variants={fadeUp} className="space-y-2">
@@ -63,6 +63,7 @@ export function Hero() {
                 </li>
               ))}
             </motion.ul>
+
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-1">
               <Button size="lg" asChild>

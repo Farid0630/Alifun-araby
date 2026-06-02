@@ -7,7 +7,6 @@ import { Roadmap } from "@/features/home/roadmap";
 import { Testimonials } from "@/features/home/testimonials";
 import { FAQ } from "@/features/home/faq";
 import { CTASection } from "@/features/home/cta-section";
-
 export const metadata: Metadata = {
   title: "Alifun Araby — Belajar Bahasa Arab Modern dengan AI",
 };

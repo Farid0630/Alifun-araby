@@ -25,6 +25,8 @@ const milestones: { year: string; event: string; icon: LucideIcon }[] = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-hero">
+
+
       {/* Hero */}
       <section className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
         <ThreeBgDynamic className="opacity-50" />
